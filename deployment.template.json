@@ -40,16 +40,6 @@
               "createOptions": ""
             }
           },
-          "ConvertFunction": {
-            "version": "1.0",
-            "type": "docker",
-            "status": "running",
-            "restartPolicy": "always",
-            "settings": {
-              "image": "${MODULES.ConvertFunction.amd64.debug}",
-              "createOptions": ""
-            }
-          },
           "FilterModule": {
             "version": "1.0",
             "type": "docker",
@@ -60,13 +50,23 @@
               "createOptions": ""
             }
           },
+          "ConvertFunction": {
+            "version": "1.0",
+            "type": "docker",
+            "status": "running",
+            "restartPolicy": "always",
+            "settings": {
+              "image": "${MODULES.ConvertFunction.amd64.debug}",
+              "createOptions": ""
+            }
+          },
           "AbnormalityDetection": {
             "version": "1.0",
             "type": "docker",
             "status": "running",
             "restartPolicy": "always",
             "settings": {
-              "image": "${MODULES.AbnormalityDetection.amd64}",
+              "image": "fangzhedgeregistry.azurecr.io/abnormalitydetection:0.0.1-amd64",
               "createOptions": ""
             }
           }
