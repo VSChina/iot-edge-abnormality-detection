@@ -1,0 +1,74 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug IoT Edge Module ConvertFunction (.NET Core)",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickRemoteProcess}",
+      "pipeTransport": {
+        "pipeProgram": "docker",
+        "pipeArgs": [
+          "exec",
+          "-i",
+          "ConvertFunction",
+          "sh",
+          "-c"
+        ],
+        "debuggerPath": "~/vsdbg/vsdbg",
+        "pipeCwd": "${workspaceFolder}",
+        "quoteArgs": true
+      },
+      "sourceFileMap": {
+        "/app": "${workspaceFolder}/modules/ConvertFunction"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "Debug IoT Edge Module FilterModule (.NET Core)",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickRemoteProcess}",
+      "pipeTransport": {
+        "pipeProgram": "docker",
+        "pipeArgs": [
+          "exec",
+          "-i",
+          "FilterModule",
+          "sh",
+          "-c"
+        ],
+        "debuggerPath": "~/vsdbg/vsdbg",
+        "pipeCwd": "${workspaceFolder}",
+        "quoteArgs": true
+      },
+      "sourceFileMap": {
+        "/app": "${workspaceFolder}/modules/FilterModule"
+      },
+      "justMyCode": true
+    },
+    {
+      "name": "Debug IoT Edge Module AbnormalityDetection (.NET Core)",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickRemoteProcess}",
+      "pipeTransport": {
+        "pipeProgram": "docker",
+        "pipeArgs": [
+          "exec",
+          "-i",
+          "AbnormalityDetection",
+          "sh",
+          "-c"
+        ],
+        "debuggerPath": "~/vsdbg/vsdbg",
+        "pipeCwd": "${workspaceFolder}",
+        "quoteArgs": true
+      },
+      "sourceFileMap": {
+        "/app": "${workspaceFolder}/modules/AbnormalityDetection"
+      },
+      "justMyCode": true
+    }
+  ]
+}
